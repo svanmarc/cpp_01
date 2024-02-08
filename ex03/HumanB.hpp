@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 16:16:03 by svanmarc          #+#    #+#             */
-/*   Updated: 2024/02/08 16:19:14 by svanmarc         ###   ########.fr       */
+/*   Updated: 2024/02/08 18:31:54 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ private:
 public:
     HumanB(std::string name);
     ~HumanB();
-    void setWeapon(Weapon &weapon);
+    void setWeapon(Weapon &Weapon);
     void attack();
 };
 

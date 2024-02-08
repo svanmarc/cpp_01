@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/08 16:11:41 by svanmarc          #+#    #+#             */
-/*   Updated: 2024/02/08 17:36:36 by svanmarc         ###   ########.fr       */
+/*   Created: 2024/02/08 17:17:31 by svanmarc          #+#    #+#             */
+/*   Updated: 2024/02/08 18:33:24 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-#define WEAPON_HPP
+#include "HumanB.hpp"
 
-#include <iostream>
-
-class Weapon
+HumanB::HumanB(std::string name) : name(name), weapon(NULL)
 {
-private:
-    std::string type;
+}
 
-public:
-    Weapon(std::string type);
-    ~Weapon();
-    std::string const getType() const;
-    void setType(std::string type);
-};
+HumanB::~HumanB()
+{
+}
 
-#endif
+void HumanB::setWeapon(Weapon &w)
+{
+	this->weapon = &w;
+}
+
+void HumanB::attack()
+{
+	if (weapon == NULL)
+		std::cout << name << " attacks with his bare hands" << std::endl;
+	else
+		std::cout << name << " attacks with his " << weapon->getType() << std::endl;
+}
