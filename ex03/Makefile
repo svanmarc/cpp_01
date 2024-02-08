@@ -5,34 +5,34 @@
 #                                                     +:+ +:+         +:+      #
 #    By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/02/08 15:44:49 by svanmarc          #+#    #+#              #
-#    Updated: 2024/02/08 16:09:42 by svanmarc         ###   ########.fr        #
+#    Created: 2024/02/08 16:05:20 by svanmarc          #+#    #+#              #
+#    Updated: 2024/02/08 16:11:02 by svanmarc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = hiThisIsBrain
+NAME = UnnecessaryViolence
 
 CC = g++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp
+SRC = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp
-	$(CC) $(CFLAGS) -o $@ -c $<
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(OBJ)
+	rm -f $(OBJ)
 
 fclean: clean
-	rm -rf $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
