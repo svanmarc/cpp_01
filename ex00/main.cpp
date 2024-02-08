@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 15:34:02 by svanmarc          #+#    #+#             */
-/*   Updated: 2024/02/07 16:21:52 by svanmarc         ###   ########.fr       */
+/*   Updated: 2024/02/08 11:44:07 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int main()
 {
-    Zombie *Zombie = newZombie("Zombie1");
+    Zombie *Zombie = newZombie("newZombieOnHeap");
     Zombie->announce();
     delete Zombie;
 
-    randomChump("Zombie2");
+    randomChump("newZombieOnStack");
 
     return 0;
 }

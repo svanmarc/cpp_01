@@ -6,7 +6,7 @@
 #    By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/07 15:12:12 by svanmarc          #+#    #+#              #
-#    Updated: 2024/02/07 17:18:24 by svanmarc         ###   ########.fr        #
+#    Updated: 2024/02/08 11:54:50 by svanmarc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ $(NAME): $(OBJ)
 %.o: %.cpp
 	$(CC) $(CFLAGS) -o $@ -c $<
 
-clean:
+clean: clean
 	rm -rf $(OBJ)
 
 fclean: clean

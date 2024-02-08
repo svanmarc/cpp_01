@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 17:18:34 by svanmarc          #+#    #+#             */
-/*   Updated: 2024/02/07 17:20:47 by svanmarc         ###   ########.fr       */
+/*   Updated: 2024/02/08 12:14:22 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define ZOMBIE_HPP
 
 #include <iostream>
+#include <sstream>
+#include <string>
 
 class Zombie
 {

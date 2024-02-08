@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 15:28:23 by svanmarc          #+#    #+#             */
-/*   Updated: 2024/02/07 16:22:57 by svanmarc         ###   ########.fr       */
+/*   Updated: 2024/02/08 11:35:41 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ private:
 public:
     Zombie();
     ~Zombie();
-    void announce();
+    void announce(void);
     void setName(std::string name);
 };
 
