@@ -6,27 +6,25 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 17:20:49 by svanmarc          #+#    #+#             */
-/*   Updated: 2024/02/07 17:22:24 by svanmarc         ###   ########.fr       */
+/*   Updated: 2024/02/10 16:11:07 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie()
-{
-}
+Zombie::Zombie() {}
 
 Zombie::~Zombie()
 {
-    std::cout << "Zombie " << this->name << " was deleted" << std::endl;
+    std::cout << _name << " was deleted" << std::endl;
 }
 
 void Zombie::announce()
 {
-    std::cout << this->name << " BraiiiiiiinnnzzzZ..." << std::endl;
+    std::cout << _name << " BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
 void Zombie::setName(std::string name)
 {
-    this->name = name;
+    _name = name;
 }

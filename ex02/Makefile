@@ -6,13 +6,13 @@
 #    By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/08 15:44:49 by svanmarc          #+#    #+#              #
-#    Updated: 2024/02/08 16:09:42 by svanmarc         ###   ########.fr        #
+#    Updated: 2024/02/10 16:27:48 by svanmarc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = hiThisIsBrain
 
-CC = g++
+CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -38,4 +38,3 @@ re: fclean all
 
 .PHONY: all clean fclean re
 
-# **************************************************************************** #

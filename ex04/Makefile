@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/02/07 15:12:12 by svanmarc          #+#    #+#              #
-#    Updated: 2024/02/10 16:27:03 by svanmarc         ###   ########.fr        #
+#    Created: 2024/02/10 16:33:43 by svanmarc          #+#    #+#              #
+#    Updated: 2024/02/10 16:34:35 by svanmarc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Zombies
+NAME = SedIsForLosers
 
 CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+SRC = main.cpp replace.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -28,7 +28,7 @@ $(NAME): $(OBJ)
 %.o: %.cpp
 	$(CC) $(CFLAGS) -o $@ -c $<
 
-clean: clean
+clean:
 	rm -rf $(OBJ)
 
 fclean: clean

@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 17:22:26 by svanmarc          #+#    #+#             */
-/*   Updated: 2024/02/08 12:17:21 by svanmarc         ###   ########.fr       */
+/*   Updated: 2024/02/10 16:09:52 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Zombie *zombieHorde(int N, std::string name)
 {
-    Zombie *zombies = new Zombie[N];
+    Zombie* zombies = new Zombie[N];
 
     for (int i = 0; i < N; i++)
     {

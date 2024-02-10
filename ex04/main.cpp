@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/07 15:28:23 by svanmarc          #+#    #+#             */
-/*   Updated: 2024/02/10 16:04:43 by svanmarc         ###   ########.fr       */
+/*   Created: 2024/02/10 16:18:09 by svanmarc          #+#    #+#             */
+/*   Updated: 2024/02/10 16:41:34 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#include "replace.hpp"
 
-#include <iostream>
-
-class Zombie
+int main(int ac, char **av)
 {
-    private:
-        std::string _name;
-
-    public:
-        Zombie();
-        ~Zombie();
-        void announce(void);
-        void setName(std::string name);
-};
-
-Zombie *newZombie(std::string name);
-
-void randomChump(std::string name);
-
-#endif
-
+    if (ac != 4)
+    {
+        std::cout << "Error: wrong number of arguments" << std::endl;
+        return (1);
+    }
+    Replace rep(av[1], av[2], av[3]);
+    rep.replace();
+    return (0);
+}

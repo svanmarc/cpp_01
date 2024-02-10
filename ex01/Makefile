@@ -6,13 +6,13 @@
 #    By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/07 17:15:15 by svanmarc          #+#    #+#              #
-#    Updated: 2024/02/08 11:55:17 by svanmarc         ###   ########.fr        #
+#    Updated: 2024/02/10 16:28:14 by svanmarc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = MoarBrainzzzzz
 
-CC = g++
+CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -38,5 +38,4 @@ re: fclean all
 
 .PHONY: all clean fclean re
 
-# **************************************************************************** #
 
