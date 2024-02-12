@@ -5,26 +5,57 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/12 15:41:02 by svanmarc          #+#    #+#             */
-/*   Updated: 2024/02/12 16:47:57 by svanmarc         ###   ########.fr       */
+/*   Created: 2024/02/12 16:30:27 by svanmarc          #+#    #+#             */
+/*   Updated: 2024/02/12 17:40:02 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "harl.hpp"
 
-Harl::Harl()
+Harl::Harl(std::string logLevel) : _logLevel(logLevel)
 {
-    levels[0].level = "DEBUG";
-    levels[0].function = &Harl::debug;
-    levels[1].level = "INFO";
-    levels[1].function = &Harl::info;
-    levels[2].level = "WARNING";
-    levels[2].function = &Harl::warning;
-    levels[3].level = "ERROR";
-    levels[3].function = &Harl::error;
+    std::string logLevels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+    _logLevelIndex = -1;
+
+    for (int i = 0; i < 4; i++)
+    {
+        if (logLevels[i] == logLevel)
+        {
+            _logLevelIndex = i;
+            return;
+        }
+    }
 }
 
-Harl::~Harl() {}
+Harl::~Harl(void) {}
+
+void Harl::filter()
+{
+    switch (_logLevelIndex)
+    {
+    case 0:
+        std::cout << "[DEBUG] " << std::endl;
+        debug();
+        std::cout << std::endl;
+        // intentional fall through
+    case 1:
+        std::cout << "[INFO] " << std::endl;
+        info();
+        std::cout << std::endl;
+        // intentional fall through
+    case 2:
+        std::cout << "[WARNING] " << std::endl;
+        warning();
+        std::cout << std::endl;
+        // intentional fall through
+    case 3:
+        std::cout << "[ERROR] " << std::endl;
+        error();
+        break;
+    default:
+        std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+    }
+}
 
 void Harl::debug(void)
 {
@@ -50,16 +81,4 @@ void Harl::warning(void)
 void Harl::error(void)
 {
     std::cout << "This is unacceptable! I want to speak to the manager now" << std::endl;
-}
-
-void Harl::complain(std::string level)
-{
-    for (int i = 0; i < 4; i++)
-    {
-        if (levels[i].level == level)
-        {
-            (this->*levels[i].function)();
-            return;
-        }
-    }
 }

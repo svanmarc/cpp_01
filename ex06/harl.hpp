@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/12 15:51:04 by svanmarc          #+#    #+#             */
-/*   Updated: 2024/02/12 16:47:19 by svanmarc         ###   ########.fr       */
+/*   Created: 2024/02/12 16:30:40 by svanmarc          #+#    #+#             */
+/*   Updated: 2024/02/12 17:31:25 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef HARL_HPP
+#define HARL_HPP
 
-int main(void)
+#include <iostream>
+#include <string>
+
+class Harl
 {
-    Harl harl;
+    public:
+        Harl(std::string logLevel);
+        ~Harl(void);
 
-    harl.complain("DEBUG");
-    harl.complain("INFO");
-    harl.complain("WARNING");
-    harl.complain("ERROR");
-    harl.complain("");
+        void filter(void);
 
-    return 0;
-}
+    private:
+        std::string _logLevel;
+        int _logLevelIndex;
+
+        void debug(void);
+        void info(void);
+        void warning(void);
+        void error(void);
+
+};
+
+#endif
