@@ -6,7 +6,7 @@
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 16:41:49 by svanmarc          #+#    #+#             */
-/*   Updated: 2024/02/10 17:06:20 by svanmarc         ###   ########.fr       */
+/*   Updated: 2024/02/12 10:28:24 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 ReplaceFile::ReplaceFile(std::string filename, std::string s1, std::string s2) : _filename(filename), _s1(s1), _s2(s2)
 {
-    _ifs.open(_filename);
+    _ifs.open(_filename.c_str());
     if (!_ifs.is_open())
     {
         std::cout << "Error: file not found" << std::endl;
         exit(1);
     }
-    _ofs.open(_filename + ".replace", std::ios::trunc);
+    _ofs.open((_filename + ".replace").c_str(), std::ios::trunc);
     // std::ios::trunc is used to clear the file if it already exists
     if (!_ofs.is_open())
     {
@@ -35,7 +35,7 @@ ReplaceFile::~ReplaceFile()
     _ofs.close();
 }
 
-void    ReplaceFile::replace()
+void ReplaceFile::replace()
 {
     std::string line;
     std::string result;
@@ -57,4 +57,3 @@ void    ReplaceFile::replace()
     }
     _ofs << result;
 }
-

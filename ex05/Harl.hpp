@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   replace.hpp                                        :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/10 16:34:53 by svanmarc          #+#    #+#             */
-/*   Updated: 2024/02/12 10:31:28 by svanmarc         ###   ########.fr       */
+/*   Created: 2024/02/12 10:47:34 by svanmarc          #+#    #+#             */
+/*   Updated: 2024/02/12 16:04:55 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef REPLACE_HPP
-#define REPLACE_HPP
+#ifndef HARL_HPP
+#define HARL_HPP
 
 #include <iostream>
-#include <fstream>
-#include <string>
-#include <cstdlib>
 
-class ReplaceFile
+class Harl
 {
 private:
-    std::string _filename;
-    std::string _s1;
-    std::string _s2;
-    std::ifstream _ifs;
-    std::ofstream _ofs;
-    // ifstream and ofstream are used to read and write files
+	void debug(void);
+	void info(void);
+	void warning(void);
+	void error(void);
+
+	struct HarlLevel
+	{
+		std::string level;
+		void (Harl::*function)(void);
+	};
+
+	HarlLevel levels[4];
 
 public:
-    ReplaceFile(std::string filename, std::string s1, std::string s2);
-    ~ReplaceFile();
-    void replace();
+	Harl(void);
+	~Harl(void);
+
+	void complain(std::string level);
 };
 
 #endif

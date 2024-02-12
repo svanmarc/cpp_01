@@ -5,22 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: svanmarc <@student.42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/10 16:18:09 by svanmarc          #+#    #+#             */
-/*   Updated: 2024/02/12 10:43:18 by svanmarc         ###   ########.fr       */
+/*   Created: 2024/02/12 15:51:04 by svanmarc          #+#    #+#             */
+/*   Updated: 2024/02/12 16:09:38 by svanmarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "replace.hpp"
+#include "Harl.hpp"
 
-int main(int ac, char **av)
+int main(void)
 {
-    if (ac != 4)
-    {
-        std::cout << "Error: wrong number of arguments" << std::endl;
-        std::cout << "write ./SedIsForLosers <fileName> <original str> <new str>" << std::endl;
-        return (1);
-    }
-    ReplaceFile rep(av[1], av[2], av[3]);
-    rep.replace();
-    return (0);
+    Harl harl;
+
+    harl.complain("DEBUG");
+    harl.complain("INFO");
+    harl.complain("WARNING");
+    harl.complain("ERROR");
+    harl.complain("UNKNOWN");
+
+    return 0;
 }
